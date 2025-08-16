@@ -1,8 +1,7 @@
 def perform_operation():
     num1 = float(input("Enter the first number: "))
     num2 = float(input("Enter the second number: "))
-    operation = str(input("Enter the operation ('add', 'subtract', 'multiply', or 'divide'): ")).strip().lower()
-    
+    operation = input("Enter the operation ('add', 'subtract', 'multiply', 'divide'): ").strip().lower()  
     if operation == 'add':
         result = num1 + num2
     elif operation == 'subtract':
@@ -13,8 +12,10 @@ def perform_operation():
         if num2 != 0:
             result = num1 / num2
         else:
-            return "Error: Division by zero is not allowed."
+            print("Error: Division by zero is not allowed.")
+            return
     else:
-        return "Error: Invalid operation."
-    return f"The result of {operation}ing {num1} and {num2} is: {result}"
-print(perform_operation())
+        print("Error: Invalid operation.") 
+    print(f"The result of {operation}ing {num1} and {num2} is: {result}") 
+
+perform_operation()
