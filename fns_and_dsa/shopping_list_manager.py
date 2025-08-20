@@ -10,14 +10,33 @@ def main():
         display_menu()
         choice = input("Enter your choice: ")
         if choice == '1':
-            pass
+            item = input("Enter the item to add: ")
+            if item:
+                shopping_list.append(item)
+                print(f"'{item}' has been added to the shopping list.")
+            else:
+                print("No item entered. Please try again.")
         elif choice == '2':
-            pass
+            if shopping_list:
+                item = input("Enter the item to remove: ")
+                if item in shopping_list:
+                    shopping_list.remove(item)
+                    print(f"'{item}' has been removed from the shopping list.")
+                else:
+                    print(f"'{item}' is not in the shopping list.")
+            else:
+                print("The shopping list is empty.")
         elif choice == '3':
-            pass
+            if shopping_list: 
+                print("\nYour Shopping List:")
+                for i, item in enumerate(shopping_list, 1):
+                    print(f"{i}. {item}")
+            else:
+                print("The shopping list is empty.")
         elif choice == '4':
             print("Goodbye!")
             break
     else:
         print("Invalid choice. Please try again.")
-main()
+if __name__ == "__main__":
+    main()
